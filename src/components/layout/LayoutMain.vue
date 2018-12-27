@@ -3,18 +3,12 @@
     <!--头部-->
     <LayoutHeader>
     </LayoutHeader>
-
     <!--主体-->
-    <div class="index-container">
-      <!--左侧菜单-->
-      <LayoutMenu>
-      </LayoutMenu>
-
-      <!--内容主体-->
-      <LayoutBody>
-      </LayoutBody>
-
-    </div>
+    <!--左侧菜单-->
+    <LayoutMenu>
+    </LayoutMenu>
+    <LayoutBody>
+    </LayoutBody>
   </div>
 
 </template>
@@ -26,10 +20,14 @@
 
   export default {
     name: "LayoutMain",
-    components: {LayoutBody, LayoutMenu, LayoutHeader}
+    components: {LayoutBody, LayoutMenu, LayoutHeader},
+    created() {
+    },
+    mounted() {
+      this.$store.dispatch('initUser');
+      this.$store.dispatch('initMenu');
+      // this.$store.dispatch('handlerRoutes');
+    },
+    methods: {}
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

@@ -12,6 +12,9 @@ Vue.use(ElementUI, {
   // size: 'mini' // set element-ui default size
 })
 
+Vue.prototype.bus = new Vue()
+
+
 
 Vue.config.productionTip = false
 

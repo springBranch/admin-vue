@@ -28,20 +28,28 @@
 </template>
 
 <script>
+  import httpService from '@/utils/http'
+  import apiUrl from '@/api/apiUrl'
+  import Layout from '@/components/layout/LayoutMain'
   export default {
     data() {
       return {
-        password: '',
-        username: ''
+        password: '13262872357',
+        username: '13262872357'
       }
     },
     methods: {
       login: function () {
-        if (this.username === 'admin' && this.password === 'admin') {
-          this.$router.push({path: '/index'})
-        } else {
-          this.$message('账号密码错误')
-        }
+        httpService.get(apiUrl.login.url, {
+          params: {
+            mobile: this.username,
+            password: this.password
+          }
+        }).then(result => {
+          if (result.status) {
+            this.$router.push({path: '/index'})
+          }
+        })
       }
     }
   }

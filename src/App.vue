@@ -18,9 +18,11 @@
     -moz-osx-font-smoothing: grayscale;
     height: 100%;
     width: 100%;
+    font-weight: bold;
   }
 
   body {
     margin: 0 !important;
+    overflow: hidden;
   }
 </style>
